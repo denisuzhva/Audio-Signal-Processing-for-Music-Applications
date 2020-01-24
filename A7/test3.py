@@ -9,13 +9,15 @@ import harmonicModel as HM
 import matplotlib.pyplot as plt
 
 ## hprModel Demo
-(fs, x) = UF.wavread('260559__roganderrick__liquor-bottle-pour-01.wav')
+filename = '260559__roganderrick__liquor-bottle-pour-01.wav'
+#filename ='speech-female.wav'
+(fs, x) = UF.wavread(filename)
 pin = 40000
-M = 801
-N = 2048
-t = -80
-minf0 = 300
-maxf0 = 500
+M = 4001
+N = 4096
+t = -100
+minf0 = 50
+maxf0 = 300
 f0et = 5
 nH = 60
 harmDevSlope = .001
@@ -47,7 +49,7 @@ Xr = X2 - Yh
 # plt.plot(x1)
 # plt.plot(mX)
 # plt.plot(abs(Yh))
-plt.plot(20*np.log10(abs(Yh[:70])))
-plt.plot(20*np.log10(abs(X2[:70])))
-plt.plot(20*np.log10(abs(Xr[:70])))
-plt.show()
+#plt.plot(20*np.log10(abs(Yh[:70])))
+#plt.plot(20*np.log10(abs(X2[:70])))
+#plt.plot(20*np.log10(abs(Xr[:70])))
+#plt.show()

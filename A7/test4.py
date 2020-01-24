@@ -8,7 +8,7 @@ import utilFunctions as UF
 import harmonicModel as HM
 import matplotlib.pyplot as plt
 
-(fs, x) = UF.wavread('../../sounds/flute-A4.wav')
+(fs, x) = UF.wavread('260559__roganderrick__liquor-bottle-pour-01.wav')
 pin = 40000
 M = 801
 N = 2048
@@ -45,9 +45,9 @@ X2 = fft(fftbuffer)
 Xr = X2 - Yh
 
 mXr = 20 * np.log10(abs(Xr[:hNs])) # converting to a DB scale
-mXrenv = resample(np.maximum(-200, mXr), mXr.size*stocf)
+mXrenv = resample(np.maximum(-200, mXr), mXr.size*int(stocf))
 stocEnv = resample(mXrenv, hNs) 
 
-plt.plot(mXr)
-plt.plot(stocEnv) # smooth versioin
-plt.show()
+#plt.plot(mXr)
+#plt.plot(stocEnv) # smooth versioin
+#plt.show()
